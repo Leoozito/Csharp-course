@@ -13,6 +13,7 @@
         int numEscolhido = int.Parse(escolha);
 
         if (numRandomMaquina == numEscolhido) {
+            Console.Clear();
             Console.WriteLine("\nACERTOU !!");
             Console.WriteLine("O N° que a máquina tava pensando era: [" + numRandomMaquina + "]");
             break;
