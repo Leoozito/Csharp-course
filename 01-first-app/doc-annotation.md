@@ -22,9 +22,6 @@
 ## Dicionario (detalhes)
 
 ```cs
-
-    
-
     Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>();
     
     string nomeBanda = Console.ReadLine()!;
@@ -39,5 +36,23 @@
 
         int nota = int.Parse(Console.ReadLine()!);
         bandasRegistradas[nomeDaBanda].Add(nota); // adicionando valor a uma determinada parte do dicionario
+    }
+```
+
+> .Average para calcular média, .Value pega os valores
+
+```cs
+    var notasAlunos = new Dictionary<string, Dictionary<string, List<int>>> {
+        { "Ana", new Dictionary<string, List<int>> {
+            { "C#", new List<int> { 8, 7, 6 } },
+        }},
+    }
+    
+    foreach (var alunos in notasAlunos.Keys) {
+        Dictionary<string, List<int>> notas = notasAlunos[alunos];
+        foreach (var materia in notas) {
+            List<int> notasDaMateria = materia.Value;
+            double media = notasDaMateria.Average();
+        }
     }
 ```

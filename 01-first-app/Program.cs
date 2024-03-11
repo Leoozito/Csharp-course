@@ -48,7 +48,7 @@ void ExibirOpcoesDoMenu() {
             AvaliarBandas();
             break;    
         case 4:
-            Console.WriteLine("Você escolhe a opção " + opcaoEscolhidaNumerica);
+            MediaDasBandas();
             break;
         case -1:
             Console.WriteLine("Tchau tchau :)");
@@ -106,6 +106,59 @@ void AvaliarBandas() {
         Console.ReadKey();
         Console.Clear();
         ExibirOpcoesDoMenu();
+    }
+}
+
+void MediaDasBandas() {
+    Console.Clear();
+    TituloDasOpcao("Media de avaliação das bandas");
+
+    Console.WriteLine(@"
+VOCÊ GOSTARIA DE:
+
+[0] Ver a media de todas as bandas
+[1] Ver a media de uma banda especifica
+    ");
+
+    int tecla = int.Parse(Console.ReadLine()!);
+
+    if (tecla == 0) {
+        ExibeMediaTodasBandas();
+    } else if (tecla == 1) {
+        ExibeMediaUmaBanda();
+    } else {
+        Console.WriteLine("Opção invalida!");
+        Thread.Sleep(2000);
+        MediaDasBandas();
+    }
+}
+
+void ExibeMediaTodasBandas() {
+    foreach (var banda in bandasRegistradas.Keys) {
+        List<int> bandas = bandasRegistradas[banda];
+        Console.WriteLine($"\nBanda: {banda} | Média: {bandas.Average()}");
+        Console.WriteLine("Digite uma tecla para voltar ao menu principal.");
+        Console.ReadKey();
+        Console.Clear();
+    }
+}
+
+void ExibeMediaUmaBanda() {
+    Console.Write("Digite o nome da banda que deseja ver a média: ");
+    string bandaDesejada = Console.ReadLine()!;
+
+    if (bandasRegistradas.ContainsKey(bandaDesejada)) {
+        List<int> media = bandasRegistradas[bandaDesejada];
+        Console.WriteLine($"\nBanda desejada: {bandaDesejada} | Média: {media.Average()}");
+        Console.WriteLine("Digite uma tecla para voltar ao menu principal.");
+        Console.ReadKey();
+        Console.Clear();
+    } else {
+        Console.Clear();
+        Console.WriteLine($"\nBanda {bandaDesejada} não encontrada!");
+        Console.WriteLine("Digite uma tecla para voltar ao menu principal.");
+        Console.ReadKey();
+        Console.Clear();
     }
 }
 
