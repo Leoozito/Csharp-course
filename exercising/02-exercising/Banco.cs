@@ -5,7 +5,7 @@ class ContaBancaria {
     public string senha = "121212";
 
     public void ExibeDadosConta() {
-        Console.Write("Digite sua senha!");
+        Console.Write("Digite sua senha: ");
         string senhaDigitada = Console.ReadLine()!;
         if (senhaDigitada == senha) {
             Console.WriteLine("------------------");
