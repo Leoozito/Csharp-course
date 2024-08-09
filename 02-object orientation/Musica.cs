@@ -1,22 +1,23 @@
 class Musica {
-    public string nome;
-    public string artista;
-    public double duracao;
-    public bool disponivel;
+    public string Nome { get; set; }
+    public string Artista { get; set; }
+    public double Duracao { get; set; }
+    public bool Disponivel { get; set; }
+    public string DescricaoResumida => $"A musica {Nome} pertence a banda {Artista}";
 
     public void ExibirFichaTecnica() {
-        Console.WriteLine($"Nome: {nome}");
-        Console.WriteLine($"Artista: {artista}");
-        Console.WriteLine($"Duração: {duracao}");
-
-        if (disponivel) {
-            {
-                Console.WriteLine("Disponível no plano.");
-            }
-            else
-            {
-                Console.WriteLine("Adquira o plano Plus+");
-            }
+        Console.WriteLine($"Nome: {Nome}");
+        Console.WriteLine($"Artista: {Artista}");
+        Console.WriteLine($"Duração: {Duracao}");
+        Console.WriteLine($"{DescricaoResumida}");
+       
+        if (Disponivel) 
+        {
+            Console.WriteLine("Disponível no plano.\n");
+        }
+        else
+        {
+            Console.WriteLine("Adquira o plano Plus+\n");
         }
     }
 }

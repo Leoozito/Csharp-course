@@ -1,14 +1,14 @@
 ﻿Musica musica1 = new Musica();
-musica1.nome = "Roxanne";
-musica1.artista = "The Police";
-musica1.duracao = 273;
-musica1.disponivel = true;
+musica1.Nome = "Roxanne";
+musica1.Artista = "The Police";
+musica1.Duracao = 273;
+musica1.Disponivel = true;
 
 Musica musica2 = new Musica();
-musica2.nome = "Vertigo";
-musica2.artista = "U2";
-musica2.duracao = 367;
-musica2.disponivel = false;
+musica2.Nome = "Vertigo";
+musica2.Artista = "U2";
+musica2.Duracao = 367;
+musica2.Disponivel = false;
 
 musica1.ExibirFichaTecnica();
 musica2.ExibirFichaTecnica();
